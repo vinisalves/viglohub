@@ -37,6 +37,11 @@
         "forgot_password": "Forgot password",
         "is_invalid": "Invalid form"
       }
+    },
+    "home": {
+      "form": {
+        "fields": { "search": "Search..." }
+      }
     }
   }
 }

@@ -131,7 +131,7 @@ const FormLogin = () => {
       const { data } = response;
 
       if (data && data.email === email.value) {
-        router.push("/home");
+        router.push("/");
         return;
       }
     } catch (error: any) {

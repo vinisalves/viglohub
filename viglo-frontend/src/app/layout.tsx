@@ -1,3 +1,4 @@
+import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Metadata } from "next";

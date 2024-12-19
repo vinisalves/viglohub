@@ -24,7 +24,7 @@ export default function Home() {
     search: {
       value: "",
       type: "text",
-      placeholder: t("fields.search.text"),
+      placeholder: t("fields.search"),
 
       appendicon: <Search className="size-5" />,
 
