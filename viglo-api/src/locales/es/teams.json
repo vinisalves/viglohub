@@ -1,0 +1,6 @@
+{
+  "validations": {
+    "not_found": "Equipo no encontrado.",
+    "not_an_owner": "El usuario es el propietario del socio."
+  }
+}

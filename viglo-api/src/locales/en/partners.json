@@ -1,0 +1,7 @@
+{
+  "validations": {
+    "not_found": "Partner not found",
+    "update_not_found": "Nothing was changed",
+    "already_exists": "Partner {legal_name}-{business_id} alterady exists"
+  }
+}

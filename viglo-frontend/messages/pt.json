@@ -1,0 +1,41 @@
+{
+  "common": {
+    "locales": {
+      "pt": "Portugues",
+      "es": "Espanhol",
+      "en": "Inglês"
+    }
+  },
+  "pages": {
+    "login": {
+      "form": {
+        "title": "Entrar",
+        "fields": {
+          "email": {
+            "text": "E-mail",
+            "errors": {
+              "invalid": "E-mail inválido"
+            }
+          },
+          "password": {
+            "text": "Senha",
+            "errors": {
+              "LOWERCASE": "Falta uma letra minúscula",
+              "UPPERCASE": "Falta uma letra maiúscula",
+              "MIN_8": "Mínimo de 8 caracteres",
+              "MAX_16": "Máximo de 16 caracteres",
+              "NUMBER": "Falta um número"
+            }
+          }
+        },
+        "OR": "OU",
+        "keep_connected": "Manter-me conectado",
+        "bt_login": "Entrar com e-mail",
+        "bt_login_with_google": "Entrar com Google",
+        "bt_signup": "Cadastrar-se",
+        "forgot_password": "Esqueceu a senha?",
+        "is_invalid": "Formulário inválido"
+      }
+    }
+  }
+}

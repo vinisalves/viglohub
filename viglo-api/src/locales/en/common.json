@@ -1,0 +1,7 @@
+{
+  "validations": {
+    "not_found": "{resource} not found.",
+    "is_email": "is not a email",
+    "is_required": "{resource} is required"
+  }
+}

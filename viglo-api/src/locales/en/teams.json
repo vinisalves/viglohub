@@ -1,0 +1,6 @@
+{
+  "validations": {
+    "not_found": "Team not found",
+    "not_an_owner": "User is not a owner os this partner"
+  }
+}

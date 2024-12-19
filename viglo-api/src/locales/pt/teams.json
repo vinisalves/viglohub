@@ -1,0 +1,6 @@
+{
+  "validations": {
+    "not_found": "Time não encontrado",
+    "not_an_owner": "Usuário é o proprietário do parceiro"
+  }
+}

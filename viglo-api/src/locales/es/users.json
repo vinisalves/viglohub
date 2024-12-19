@@ -1,0 +1,6 @@
+{
+  "validations": {
+    "not_found": "Usuario {username} no encontrado.",
+    "update_not_found": "No se ha realizado ningún cambio."
+  }
+}

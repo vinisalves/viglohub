@@ -1,0 +1,7 @@
+{
+  "validations": {
+    "not_found": "Socio no encontrado.",
+    "update_not_found": "No se ha realizado ningún cambio.",
+    "already_exists": "El socio {legal_name}-{business_id} ya existe."
+  }
+}

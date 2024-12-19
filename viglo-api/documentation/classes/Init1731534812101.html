@@ -1,0 +1,589 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>vibro_api documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">vibro_api documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >Init1731534812101</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/migrations/1731534812101-init.ts</code>
+        </p>
+
+
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                        <code>MigrationInterface</code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#down" >down</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                    <span class="modifier">Async</span>
+                                <a href="#up" >up</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;Init1731534812101&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="4" class="link-to-prism">src/migrations/1731534812101-init.ts:4</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="down"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>down</b></span>
+                        <a href="#down"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>down(queryRunner: QueryRunner)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="67"
+                                    class="link-to-prism">src/migrations/1731534812101-init.ts:67</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="up"></a>
+                    <span class="name">
+                            <span class="modifier">Public</span>
+                            <span class="modifier">Async</span>
+                        <span ><b>up</b></span>
+                        <a href="#up"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>up(queryRunner: QueryRunner)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="6"
+                                    class="link-to-prism">src/migrations/1731534812101-init.ts:6</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>queryRunner</td>
+                                            <td>
+                                                        <code>QueryRunner</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { MigrationInterface, QueryRunner } from &quot;typeorm&quot;;
+
+export class Init1731534812101 implements MigrationInterface {
+    name &#x3D; &#x27;Init1731534812101&#x27;
+
+    public async up(queryRunner: QueryRunner): Promise&lt;void&gt; {
+        await queryRunner.query(&#x60;CREATE TABLE &quot;files&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;key&quot; character varying NOT NULL, CONSTRAINT &quot;PK_6c16b9093a142e0e7613b04a3d9&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TYPE &quot;public&quot;.&quot;user_profile_gender_enum&quot; AS ENUM(&#x27;MALE&#x27;, &#x27;FEMALE&#x27;, &#x27;OTHER&#x27;)&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;user_profile&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;first_name&quot; character varying NOT NULL, &quot;last_name&quot; character varying NOT NULL, &quot;street&quot; character varying, &quot;city&quot; character varying, &quot;state&quot; character varying, &quot;postal_code&quot; character varying(10), &quot;country&quot; character varying, &quot;complement&quot; character varying, &quot;phone&quot; character varying NOT NULL, &quot;gender&quot; &quot;public&quot;.&quot;user_profile_gender_enum&quot;, &quot;birth_date&quot; date, &quot;user_id&quot; uuid, &quot;avatar_id&quot; uuid, CONSTRAINT &quot;UQ_eee360f3bff24af1b6890765201&quot; UNIQUE (&quot;user_id&quot;), CONSTRAINT &quot;REL_eee360f3bff24af1b689076520&quot; UNIQUE (&quot;user_id&quot;), CONSTRAINT &quot;REL_3c011f4eefd39da06c16ace49a&quot; UNIQUE (&quot;avatar_id&quot;), CONSTRAINT &quot;PK_f44d0cd18cfd80b0fed7806c3b7&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TYPE &quot;public&quot;.&quot;user_settings_theme_enum&quot; AS ENUM(&#x27;DARK&#x27;, &#x27;LIGHT&#x27;)&#x60;);
+        await queryRunner.query(&#x60;CREATE TYPE &quot;public&quot;.&quot;user_settings_locale_enum&quot; AS ENUM(&#x27;EN&#x27;, &#x27;PT&#x27;, &#x27;ES&#x27;)&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;user_settings&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;theme&quot; &quot;public&quot;.&quot;user_settings_theme_enum&quot; NOT NULL DEFAULT &#x27;LIGHT&#x27;, &quot;locale&quot; &quot;public&quot;.&quot;user_settings_locale_enum&quot; NOT NULL DEFAULT &#x27;EN&#x27;, &quot;user_id&quot; uuid, CONSTRAINT &quot;REL_4ed056b9344e6f7d8d46ec4b30&quot; UNIQUE (&quot;user_id&quot;), CONSTRAINT &quot;PK_00f004f5922a0744d174530d639&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TYPE &quot;public&quot;.&quot;partner_profile_theme_enum&quot; AS ENUM(&#x27;DARK&#x27;, &#x27;LIGHT&#x27;)&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;partner_profile&quot; (&quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;name&quot; character varying NOT NULL, &quot;description&quot; character varying NOT NULL, &quot;category&quot; character varying NOT NULL, &quot;street&quot; character varying NOT NULL, &quot;city&quot; character varying NOT NULL, &quot;state&quot; character varying NOT NULL, &quot;postal_code&quot; character varying(10) NOT NULL, &quot;country&quot; character varying NOT NULL, &quot;complement&quot; character varying, &quot;phone&quot; character varying NOT NULL, &quot;theme&quot; &quot;public&quot;.&quot;partner_profile_theme_enum&quot; NOT NULL DEFAULT &#x27;LIGHT&#x27;, &quot;partner_id&quot; uuid, &quot;logo_id&quot; uuid, &quot;banner_id&quot; uuid, CONSTRAINT &quot;REL_50daa33af878bb6b33b68a3b44&quot; UNIQUE (&quot;partner_id&quot;), CONSTRAINT &quot;REL_d50aa4ca9c1c0b68de9519c26d&quot; UNIQUE (&quot;logo_id&quot;), CONSTRAINT &quot;REL_7e549309be75f65476d4a0a98a&quot; UNIQUE (&quot;banner_id&quot;), CONSTRAINT &quot;PK_44faff5f032dc54a4484741b078&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;followers&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;user_id&quot; uuid, &quot;partner_id&quot; uuid, CONSTRAINT &quot;unique_follow&quot; UNIQUE (&quot;user_id&quot;, &quot;partner_id&quot;), CONSTRAINT &quot;PK_c90cfc5b18edd29bd15ba95c1a4&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;reviews&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; SERIAL NOT NULL, &quot;stars&quot; integer NOT NULL, &quot;comment&quot; character varying NOT NULL, &quot;user_id&quot; uuid, &quot;partner_id&quot; uuid, CONSTRAINT &quot;CHK_76682f10516849abb17cd501b9&quot; CHECK (&quot;stars&quot; BETWEEN 1 AND 5), CONSTRAINT &quot;PK_231ae565c273ee700b283f15c1d&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;tags&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;tag&quot; character varying(20) NOT NULL, CONSTRAINT &quot;PK_e7dc17249a1148a1970748eda99&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;partner_settings&quot; (&quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;partner_id&quot; uuid, CONSTRAINT &quot;REL_43e166de56d428d545402567fd&quot; UNIQUE (&quot;partner_id&quot;), CONSTRAINT &quot;PK_25ec258b870291f743c1ff00248&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;partners&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;legal_name&quot; character varying NOT NULL, &quot;business_id&quot; character varying NOT NULL, &quot;profile_id&quot; uuid, &quot;settings_id&quot; uuid, CONSTRAINT &quot;UQ_dc1522c9bf1cabc0c85359c2d68&quot; UNIQUE (&quot;legal_name&quot;), CONSTRAINT &quot;UQ_ca34102014a1fd8163017a58dc2&quot; UNIQUE (&quot;business_id&quot;), CONSTRAINT &quot;REL_9fb38ad65447f6855d619dd2ce&quot; UNIQUE (&quot;profile_id&quot;), CONSTRAINT &quot;REL_f01a03d81d935e1e4545ef0ecf&quot; UNIQUE (&quot;settings_id&quot;), CONSTRAINT &quot;PK_998645b20820e4ab99aeae03b41&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;subscribers&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;user_id&quot; uuid, &quot;partner_id&quot; uuid, CONSTRAINT &quot;PK_cbe0a7a9256c826f403c0236b67&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;roles&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;role&quot; character varying NOT NULL, CONSTRAINT &quot;PK_c1433d71a4838793a49dcad46ab&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;team_members&quot; (&quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;team_id&quot; uuid, &quot;user_id&quot; uuid, CONSTRAINT &quot;REL_fdad7d5768277e60c40e01cdce&quot; UNIQUE (&quot;team_id&quot;), CONSTRAINT &quot;REL_c2bf4967c8c2a6b845dadfbf3d&quot; UNIQUE (&quot;user_id&quot;), CONSTRAINT &quot;PK_ca3eae89dcf20c9fd95bf7460aa&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;teams&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;name&quot; character varying NOT NULL, &quot;partner_id&quot; uuid, CONSTRAINT &quot;REL_fde44edfeb831a0f12733b0938&quot; UNIQUE (&quot;partner_id&quot;), CONSTRAINT &quot;PK_7e5523774a38b08a6236d322403&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;users&quot; (&quot;created_at&quot; TIMESTAMP NOT NULL DEFAULT (&#x27;now&#x27;::text)::timestamp(6) with time zone, &quot;updated_at&quot; TIMESTAMP NOT NULL DEFAULT now(), &quot;deleted_at&quot; TIMESTAMP, &quot;id&quot; uuid NOT NULL DEFAULT uuid_generate_v4(), &quot;email&quot; character varying NOT NULL, &quot;password&quot; character varying NOT NULL, &quot;refresh_token&quot; character varying, &quot;recover_pass_token&quot; character varying, &quot;user_gateway_id&quot; character varying, &quot;profile_id&quot; uuid, &quot;settings_id&quot; uuid, CONSTRAINT &quot;UQ_97672ac88f789774dd47f7c8be3&quot; UNIQUE (&quot;email&quot;), CONSTRAINT &quot;REL_23371445bd80cb3e413089551b&quot; UNIQUE (&quot;profile_id&quot;), CONSTRAINT &quot;REL_aa03f4d6277ce01b387c99d856&quot; UNIQUE (&quot;settings_id&quot;), CONSTRAINT &quot;PK_a3ffb1c0c8416b9fc6f907b7433&quot; PRIMARY KEY (&quot;id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;partners_tags&quot; (&quot;partner_id&quot; uuid NOT NULL, &quot;tag_id&quot; uuid NOT NULL, CONSTRAINT &quot;PK_69cefba3f2570d1a040530ced75&quot; PRIMARY KEY (&quot;partner_id&quot;, &quot;tag_id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_0bb30eecfe3e109dd0c5fbfbc5&quot; ON &quot;partners_tags&quot; (&quot;partner_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_a5dd1e5a6d76ed2607dd31b0e6&quot; ON &quot;partners_tags&quot; (&quot;tag_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;partners_owners&quot; (&quot;partner_id&quot; uuid NOT NULL, &quot;user_id&quot; uuid NOT NULL, CONSTRAINT &quot;PK_1dc8e359c31a2f2c70a816f7fb7&quot; PRIMARY KEY (&quot;partner_id&quot;, &quot;user_id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_2a67fee319e78de064f0210347&quot; ON &quot;partners_owners&quot; (&quot;partner_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_35ba194e002c739c3caf41fdac&quot; ON &quot;partners_owners&quot; (&quot;user_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;team_members_roles&quot; (&quot;team_member_id&quot; uuid NOT NULL, &quot;role_id&quot; uuid NOT NULL, CONSTRAINT &quot;PK_4d8cf4d84ca3df7d35f03654707&quot; PRIMARY KEY (&quot;team_member_id&quot;, &quot;role_id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_f4d4e7ba1240fe5f2c4be80d13&quot; ON &quot;team_members_roles&quot; (&quot;team_member_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_d28e1ffff7d6b7d3eb26253f9d&quot; ON &quot;team_members_roles&quot; (&quot;role_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE TABLE &quot;users_tags&quot; (&quot;user_id&quot; uuid NOT NULL, &quot;tag_id&quot; uuid NOT NULL, CONSTRAINT &quot;PK_7f29e59d4fa87411d3fa79c5db4&quot; PRIMARY KEY (&quot;user_id&quot;, &quot;tag_id&quot;))&#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_37fe67a713a33c9385ede5782d&quot; ON &quot;users_tags&quot; (&quot;user_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;CREATE INDEX &quot;IDX_ee316e71a670dca8d696490aee&quot; ON &quot;users_tags&quot; (&quot;tag_id&quot;) &#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_profile&quot; ADD CONSTRAINT &quot;fk_profile_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_profile&quot; ADD CONSTRAINT &quot;fk_profile_photo_id&quot; FOREIGN KEY (&quot;avatar_id&quot;) REFERENCES &quot;files&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_settings&quot; ADD CONSTRAINT &quot;fk_profile_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; ADD CONSTRAINT &quot;fk_profile_partner_id&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; ADD CONSTRAINT &quot;fk_profile_logo_id&quot; FOREIGN KEY (&quot;logo_id&quot;) REFERENCES &quot;files&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; ADD CONSTRAINT &quot;fk_profile_banner_id&quot; FOREIGN KEY (&quot;banner_id&quot;) REFERENCES &quot;files&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;followers&quot; ADD CONSTRAINT &quot;fk_followers_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;followers&quot; ADD CONSTRAINT &quot;fk_followers_partner_id&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;reviews&quot; ADD CONSTRAINT &quot;fk_reviews_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;reviews&quot; ADD CONSTRAINT &quot;fk_partner_user_id&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_settings&quot; ADD CONSTRAINT &quot;fk_settings_partner_id&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners&quot; ADD CONSTRAINT &quot;fk_partner_profile_id&quot; FOREIGN KEY (&quot;profile_id&quot;) REFERENCES &quot;partner_profile&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners&quot; ADD CONSTRAINT &quot;fk_partner_settings_id&quot; FOREIGN KEY (&quot;settings_id&quot;) REFERENCES &quot;partner_settings&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;subscribers&quot; ADD CONSTRAINT &quot;fk_subscribers_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;subscribers&quot; ADD CONSTRAINT &quot;fk_subscribers_partner_id&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members&quot; ADD CONSTRAINT &quot;fk_team_member_tem_id&quot; FOREIGN KEY (&quot;team_id&quot;) REFERENCES &quot;teams&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members&quot; ADD CONSTRAINT &quot;fk_team_member_user_id&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;teams&quot; ADD CONSTRAINT &quot;FK_fde44edfeb831a0f12733b09383&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users&quot; ADD CONSTRAINT &quot;fk_user_profile_id&quot; FOREIGN KEY (&quot;profile_id&quot;) REFERENCES &quot;user_profile&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users&quot; ADD CONSTRAINT &quot;fk_user_settings_id&quot; FOREIGN KEY (&quot;settings_id&quot;) REFERENCES &quot;user_settings&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_tags&quot; ADD CONSTRAINT &quot;FK_0bb30eecfe3e109dd0c5fbfbc50&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_tags&quot; ADD CONSTRAINT &quot;FK_a5dd1e5a6d76ed2607dd31b0e62&quot; FOREIGN KEY (&quot;tag_id&quot;) REFERENCES &quot;tags&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_owners&quot; ADD CONSTRAINT &quot;FK_2a67fee319e78de064f02103478&quot; FOREIGN KEY (&quot;partner_id&quot;) REFERENCES &quot;partners&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_owners&quot; ADD CONSTRAINT &quot;FK_35ba194e002c739c3caf41fdac4&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members_roles&quot; ADD CONSTRAINT &quot;fk_team_member_id&quot; FOREIGN KEY (&quot;team_member_id&quot;) REFERENCES &quot;team_members&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members_roles&quot; ADD CONSTRAINT &quot;fk_team_member_role_id&quot; FOREIGN KEY (&quot;role_id&quot;) REFERENCES &quot;roles&quot;(&quot;id&quot;) ON DELETE NO ACTION ON UPDATE NO ACTION&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users_tags&quot; ADD CONSTRAINT &quot;FK_37fe67a713a33c9385ede5782df&quot; FOREIGN KEY (&quot;user_id&quot;) REFERENCES &quot;users&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users_tags&quot; ADD CONSTRAINT &quot;FK_ee316e71a670dca8d696490aeeb&quot; FOREIGN KEY (&quot;tag_id&quot;) REFERENCES &quot;tags&quot;(&quot;id&quot;) ON DELETE CASCADE ON UPDATE CASCADE&#x60;);
+    }
+
+    public async down(queryRunner: QueryRunner): Promise&lt;void&gt; {
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users_tags&quot; DROP CONSTRAINT &quot;FK_ee316e71a670dca8d696490aeeb&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users_tags&quot; DROP CONSTRAINT &quot;FK_37fe67a713a33c9385ede5782df&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members_roles&quot; DROP CONSTRAINT &quot;fk_team_member_role_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members_roles&quot; DROP CONSTRAINT &quot;fk_team_member_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_owners&quot; DROP CONSTRAINT &quot;FK_35ba194e002c739c3caf41fdac4&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_owners&quot; DROP CONSTRAINT &quot;FK_2a67fee319e78de064f02103478&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_tags&quot; DROP CONSTRAINT &quot;FK_a5dd1e5a6d76ed2607dd31b0e62&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners_tags&quot; DROP CONSTRAINT &quot;FK_0bb30eecfe3e109dd0c5fbfbc50&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users&quot; DROP CONSTRAINT &quot;fk_user_settings_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;users&quot; DROP CONSTRAINT &quot;fk_user_profile_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;teams&quot; DROP CONSTRAINT &quot;FK_fde44edfeb831a0f12733b09383&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members&quot; DROP CONSTRAINT &quot;fk_team_member_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;team_members&quot; DROP CONSTRAINT &quot;fk_team_member_tem_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;subscribers&quot; DROP CONSTRAINT &quot;fk_subscribers_partner_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;subscribers&quot; DROP CONSTRAINT &quot;fk_subscribers_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners&quot; DROP CONSTRAINT &quot;fk_partner_settings_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partners&quot; DROP CONSTRAINT &quot;fk_partner_profile_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_settings&quot; DROP CONSTRAINT &quot;fk_settings_partner_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;reviews&quot; DROP CONSTRAINT &quot;fk_partner_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;reviews&quot; DROP CONSTRAINT &quot;fk_reviews_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;followers&quot; DROP CONSTRAINT &quot;fk_followers_partner_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;followers&quot; DROP CONSTRAINT &quot;fk_followers_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; DROP CONSTRAINT &quot;fk_profile_banner_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; DROP CONSTRAINT &quot;fk_profile_logo_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;partner_profile&quot; DROP CONSTRAINT &quot;fk_profile_partner_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_settings&quot; DROP CONSTRAINT &quot;fk_profile_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_profile&quot; DROP CONSTRAINT &quot;fk_profile_photo_id&quot;&#x60;);
+        await queryRunner.query(&#x60;ALTER TABLE &quot;user_profile&quot; DROP CONSTRAINT &quot;fk_profile_user_id&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_ee316e71a670dca8d696490aee&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_37fe67a713a33c9385ede5782d&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;users_tags&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_d28e1ffff7d6b7d3eb26253f9d&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_f4d4e7ba1240fe5f2c4be80d13&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;team_members_roles&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_35ba194e002c739c3caf41fdac&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_2a67fee319e78de064f0210347&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;partners_owners&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_a5dd1e5a6d76ed2607dd31b0e6&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP INDEX &quot;public&quot;.&quot;IDX_0bb30eecfe3e109dd0c5fbfbc5&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;partners_tags&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;users&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;teams&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;team_members&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;roles&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;subscribers&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;partners&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;partner_settings&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;tags&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;reviews&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;followers&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;partner_profile&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TYPE &quot;public&quot;.&quot;partner_profile_theme_enum&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;user_settings&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TYPE &quot;public&quot;.&quot;user_settings_locale_enum&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TYPE &quot;public&quot;.&quot;user_settings_theme_enum&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;user_profile&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TYPE &quot;public&quot;.&quot;user_profile_gender_enum&quot;&#x60;);
+        await queryRunner.query(&#x60;DROP TABLE &quot;files&quot;&#x60;);
+    }
+
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Init1731534812101.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

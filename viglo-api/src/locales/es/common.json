@@ -1,0 +1,5 @@
+{
+  "validations": {
+    "not_found": "{resource} no encontrado"
+  }
+}

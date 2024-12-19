@@ -1,0 +1,49 @@
+{
+  "common": {
+    "locales": {
+      "pt": "Portugues",
+      "es": "Español",
+      "en": "Inglés"
+    }
+  },
+  "pages": {
+    "login": {
+      "form": {
+        "title": "Iniciar sesión",
+        "fields": {
+          "email": {
+            "text": "Correo electrónico",
+            "errors": {
+              "invalid": "Correo electrónico no válido"
+            }
+          },
+          "password": {
+            "text": "Contraseña",
+            "errors": {
+              "LOWERCASE": "Falta una letra minúscula",
+              "UPPERCASE": "Falta una letra mayúscula",
+              "MIN_8": "Mínimo 8 caracteres",
+              "MAX_16": "Máximo 16 caracteres",
+              "NUMBER": "Falta un número"
+            }
+          }
+        },
+        "OR": "O",
+        "keep_connected": "Mantenerme conectado",
+        "bt_login": "Sesión con correo electrónico",
+        "bt_login_with_google": "Iniciar sesión con Google",
+        "bt_signup": "Registrarse",
+        "forgot_password": "¿Olvidaste tu contraseña?"
+      }
+    },
+    "home": {
+      "form": {
+        "fields": {
+          "search": {
+            "text": "Pesquisar"
+          }
+        }
+      }
+    }
+  }
+}

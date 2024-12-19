@@ -1,0 +1,42 @@
+{
+  "common": {
+    "locales": {
+      "pt": "Portuguese",
+      "es": "Spanish",
+      "en": "English"
+    }
+  },
+  "pages": {
+    "login": {
+      "form": {
+        "title": "Sign in",
+        "fields": {
+          "email": {
+            "text": "Email",
+            "errors": {
+              "invalid": "Invalid e-mail"
+            }
+          },
+          "password": {
+            "text": "password",
+            "errors": {
+              "LOWERCASE": "Missing lowercase letter",
+              "UPPERCASE": "Missing upercase letter",
+              "MIN_8": "min 8 characteres",
+              "MAX_16": "max 16 characteres",
+              "NUMBER": "missing a number",
+              "SPECIAL_CHAR": "Missing a spec. char !@#$%*("
+            }
+          }
+        },
+        "OR": "OR",
+        "keep_connected": "Keep me connected",
+        "bt_login": "Login With Email",
+        "bt_login_with_google": "Sign in with Google",
+        "bt_signup": "Sign up",
+        "forgot_password": "Forgot password",
+        "is_invalid": "Invalid form"
+      }
+    }
+  }
+}
