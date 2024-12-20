@@ -12,7 +12,7 @@ import { MapPin, ShoppingCart, Menu } from "lucide-react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { LanguageChanger } from "@/components/ui/language-changer";
 import { ModeToggle } from "@/components/ui/mode-togle";
-import { PartnerCard } from "./_components/partner-card";
+import { PartnerCard } from "@/components/partner/partner-card";
 
 type FormHome = {
   search: string;

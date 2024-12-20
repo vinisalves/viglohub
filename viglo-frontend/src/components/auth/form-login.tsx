@@ -178,10 +178,10 @@ const FormLogin = () => {
             <Col className="w-full">
               <Button className="bg-blue-700">
                 <Image
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/800px-Google_%22G%22_logo.svg.png"
+                  src={`/imgs/google_logo.png`}
                   alt="Google logo"
-                  width={10}
-                  height={10}
+                  width={18}
+                  height={18}
                 />
                 {t("bt_login_with_google")}
               </Button>

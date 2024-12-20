@@ -5,7 +5,7 @@ import Row from "@/components/ui/row";
 
 import { ModeToggle } from "@/components/ui/mode-togle";
 import { LanguageChanger } from "@/components/ui/language-changer";
-import FormLogin from "./_components/form-login";
+import FormLogin from "@/components/auth/form-login";
 
 const HomePage = () => {
   return (

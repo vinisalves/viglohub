@@ -1,7 +1,7 @@
 {
   "common": {
     "locales": {
-      "pt": "Portugues",
+      "pt": "Português",
       "es": "Espanhol",
       "en": "Inglês"
     }
@@ -24,17 +24,23 @@
               "UPPERCASE": "Falta uma letra maiúscula",
               "MIN_8": "Mínimo de 8 caracteres",
               "MAX_16": "Máximo de 16 caracteres",
-              "NUMBER": "Falta um número"
+              "NUMBER": "Falta um número",
+              "SPECIAL_CHAR": "Falta um caractere especial !@#$%*("
             }
           }
         },
         "OR": "OU",
-        "keep_connected": "Manter-me conectado",
-        "bt_login": "Entrar com e-mail",
+        "keep_connected": "Mantenha-me conectado",
+        "bt_login": "Entrar com E-mail",
         "bt_login_with_google": "Entrar com Google",
         "bt_signup": "Cadastrar-se",
-        "forgot_password": "Esqueceu a senha?",
+        "forgot_password": "Esqueceu a senha",
         "is_invalid": "Formulário inválido"
+      }
+    },
+    "home": {
+      "form": {
+        "fields": { "search": "Pesquisar..." }
       }
     }
   }
