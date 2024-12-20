@@ -1,0 +1,5 @@
+export enum STATUS_PARTNER {
+  ANALYSING = "ANALYSING",
+  READY = "READY",
+  CLOSED = "CLOSED",
+}

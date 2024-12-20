@@ -20,10 +20,10 @@ import { Label } from "@/components/ui/label";
 import Image from "next/image";
 import { Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Login } from "./form-login.service";
+import { Login } from "@/services/auth.service";
 
 import { useToast } from "@/hooks/use-toast";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 type FormLogin = {
   email: string;
