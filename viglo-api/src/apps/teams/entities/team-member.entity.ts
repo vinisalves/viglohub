@@ -8,24 +8,25 @@ import {
   OneToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { TeamsEntity } from './teams.entity';
+import { TeamEntity } from './teams.entity';
 import { UserEntity } from '../../users/entities/user.entity';
-import { RolesEntity } from '../../roles/entities/roles.entity';
+import { RoleEntity } from '../../roles/entities/roles.entity';
+import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
 
 @Entity({
   name: 'team_members',
 })
-export class TeamMemberEntity {
+export class TeamMemberEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @ManyToOne(() => TeamsEntity, (team) => team.members, { onDelete: 'CASCADE' })
+  @ManyToOne(() => TeamEntity, (team) => team.members, { onDelete: 'CASCADE' })
   @JoinColumn({
     name: 'team_id',
     referencedColumnName: 'id',
     foreignKeyConstraintName: 'fk_team_member_tem_id',
   })
-  team: TeamsEntity;
+  team: TeamEntity;
 
   @ManyToOne(() => UserEntity, (user) => user.teams, { onDelete: 'CASCADE' })
   @JoinColumn({
@@ -35,7 +36,7 @@ export class TeamMemberEntity {
   })
   members: UserEntity;
 
-  @ManyToMany(() => RolesEntity, (roles) => roles.team_members)
+  @ManyToMany(() => RoleEntity, (roles) => roles.team_members)
   @JoinTable({
     name: 'team_members_roles',
     joinColumn: {
@@ -49,5 +50,5 @@ export class TeamMemberEntity {
       foreignKeyConstraintName: 'fk_team_member_role_id',
     },
   })
-  roles: RolesEntity[];
+  roles: RoleEntity[];
 }

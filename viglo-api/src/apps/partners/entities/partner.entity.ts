@@ -13,15 +13,21 @@ import {
 } from 'typeorm';
 import { PartnerProfileEntity } from './partner-profile.entity';
 import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
-import { SubscribersEntity } from '../../subscribers/entities/subscribers.entity';
-import { FollowersEntity } from '../../followers/entities/followers.entity';
+import { SubscriberEntity } from '../../subscribers/entities/subscribers.entity';
+import { FollowerEntity } from '../../followers/entities/followers.entity';
 import { ReviewsEntity } from '../../reviews/entities/reviews.entity';
 import { Exclude } from 'class-transformer';
 import { generateHash, compareHash } from '../../../utils/encryption';
-import { TagsEntity } from '../../tags/entities/tags.entity';
+import { TagEntity } from '../../tags/entities/tags.entity';
 import { PartnerSettingsEntity } from './partner-settings.entity';
 import { UserEntity } from '../../users/entities/user.entity';
-import { TeamsEntity } from '../../teams/entities/teams.entity';
+import { TeamEntity } from '../../teams/entities/teams.entity';
+
+enum STATUS_PARTNER {
+  ANALYSING = 'ANALYSING',
+  READY = 'READY',
+  CLOSED = 'CLOSED',
+}
 
 @Entity({
   name: 'partners',
@@ -34,11 +40,22 @@ export class PartnerEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Column({
+    type: 'enum',
+    enum: STATUS_PARTNER,
+    default: STATUS_PARTNER.ANALYSING,
+  })
+  status: STATUS_PARTNER;
+
   @Column({ unique: true })
   legal_name: string;
 
   @Column({ unique: true })
   business_id: string;
+
+  @Exclude()
+  @Column({ nullable: true })
+  confirmation_code: number;
 
   @OneToOne(() => PartnerProfileEntity, { cascade: true })
   @JoinColumn({
@@ -56,16 +73,16 @@ export class PartnerEntity extends SoftFieldsForEntities {
   })
   settings: PartnerSettingsEntity;
 
-  @OneToMany(() => SubscribersEntity, (subscriber) => subscriber.partner)
-  subscribers: SubscribersEntity[];
+  @OneToMany(() => SubscriberEntity, (subscriber) => subscriber.partner)
+  subscribers: SubscriberEntity[];
 
-  @OneToMany(() => FollowersEntity, (followers) => followers.partner)
-  followers: FollowersEntity[];
+  @OneToMany(() => FollowerEntity, (followers) => followers.partner)
+  followers: FollowerEntity[];
 
   @OneToMany(() => ReviewsEntity, (review) => review.partner)
   reviews: ReviewsEntity[];
 
-  @ManyToMany(() => TagsEntity)
+  @ManyToMany(() => TagEntity)
   @JoinTable({
     name: 'partners_tags',
     joinColumn: {
@@ -77,7 +94,7 @@ export class PartnerEntity extends SoftFieldsForEntities {
       referencedColumnName: 'id',
     },
   })
-  tags: TagsEntity;
+  tags: TagEntity;
 
   @ManyToMany(() => UserEntity, (user) => user.partners)
   @JoinTable({
@@ -93,6 +110,6 @@ export class PartnerEntity extends SoftFieldsForEntities {
   })
   owners: UserEntity[];
 
-  @OneToMany(() => TeamsEntity, (team) => team.partner)
-  teams: TeamsEntity[];
+  @OneToMany(() => TeamEntity, (team) => team.partner)
+  teams: TeamEntity[];
 }

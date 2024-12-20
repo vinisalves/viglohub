@@ -177,7 +177,7 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(followersRepository: <a href="../classes/FollowersEntity.html" target="_self">Repository&lt;FollowersEntity&gt;</a>, i18n: <a href="../injectables/CustomI18nService.html" target="_self">CustomI18nService</a>)</code>
+<code>constructor(followersRepository: <a href="../classes/FollowerEntity.html" target="_self">Repository&lt;FollowerEntity&gt;</a>, i18n: <a href="../injectables/CustomI18nService.html" target="_self">CustomI18nService</a>)</code>
                     </td>
                 </tr>
                         <tr>
@@ -203,7 +203,7 @@
                                                         <td>followersRepository</td>
                                                   
                                                         <td>
-                                                                        <code><a href="../classes/FollowersEntity.html" target="_self" >Repository&lt;FollowersEntity&gt;</a></code>
+                                                                        <code><a href="../classes/FollowerEntity.html" target="_self" >Repository&lt;FollowerEntity&gt;</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -446,7 +446,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/FollowersEntity.html" target="_self" >Promise&lt;FollowersEntity&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/FollowerEntity.html" target="_self" >Promise&lt;FollowerEntity&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -515,7 +515,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/FollowersEntity.html" target="_self" >Promise&lt;FollowersEntity[]&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/FollowerEntity.html" target="_self" >Promise&lt;FollowerEntity[]&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -584,7 +584,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/FollowersEntity.html" target="_self" >Promise&lt;FollowersEntity[]&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/FollowerEntity.html" target="_self" >Promise&lt;FollowerEntity[]&gt;</a></code>
 
                         </div>
                             <div class="io-description">
@@ -683,7 +683,7 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { forwardRef, Inject, Injectable } from &#x27;@nestjs/common&#x27;;
 import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
-import { FollowersEntity } from &#x27;./entities/followers.entity&#x27;;
+import { FollowerEntity } from &#x27;./entities/followers.entity&#x27;;
 import { Repository, UpdateResult } from &#x27;typeorm&#x27;;
 import { FollowPartnerDto } from &#x27;./dtos/follow-partner.dto&#x27;;
 import { UnfollowPartnerDto } from &#x27;./dtos/unfollow-partner.dto&#x27;;
@@ -696,13 +696,13 @@ import { CustomI18nService } from &#x27;../i18n/i18n.service&#x27;;
 @Injectable()
 export class FollowersService {
   constructor(
-    @InjectRepository(FollowersEntity)
-    private readonly followersRepository: Repository&lt;FollowersEntity&gt;,
+    @InjectRepository(FollowerEntity)
+    private readonly followersRepository: Repository&lt;FollowerEntity&gt;,
 
     private readonly i18n: CustomI18nService,
   ) {}
 
-  async getUserFollows(user: UserEntity): Promise&lt;FollowersEntity[]&gt; {
+  async getUserFollows(user: UserEntity): Promise&lt;FollowerEntity[]&gt; {
     if (!user) throw new Error(this.i18n.t(&#x27;users.validations.not_found&#x27;));
 
     return this.followersRepository.find({
@@ -719,7 +719,7 @@ export class FollowersService {
     });
   }
 
-  async getPartnerFollows(partner: PartnerEntity): Promise&lt;FollowersEntity[]&gt; {
+  async getPartnerFollows(partner: PartnerEntity): Promise&lt;FollowerEntity[]&gt; {
     if (!partner)
       throw new Error(this.i18n.t(&#x27;partners.validations.not_found&#x27;));
     return this.followersRepository.find({
@@ -739,7 +739,7 @@ export class FollowersService {
   async follow(
     user: UserEntity,
     partner: PartnerEntity,
-  ): Promise&lt;FollowersEntity&gt; {
+  ): Promise&lt;FollowerEntity&gt; {
     if (!partner)
       throw new Error(this.i18n.t(&#x27;partners.validations.not_found&#x27;));
 

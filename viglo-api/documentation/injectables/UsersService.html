@@ -592,11 +592,11 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="../classes/FollowersEntity.html" target="_self" >Promise&lt;FollowersEntity&gt;</a></code>
+                            <b>Returns : </b>        <code><a href="../classes/FollowerEntity.html" target="_self" >Promise&lt;FollowerEntity&gt;</a></code>
 
                         </div>
                             <div class="io-description">
-                                <p>Promise<FollowersEntity></p>
+                                <p>Promise<FollowerEntity></p>
 
                             </div>
                 </td>
@@ -1106,7 +1106,7 @@ import { compareHash, generateHash } from &#x27;../../utils/encryption&#x27;;
 import { PartnersService } from &#x27;../partners/partners.service&#x27;;
 import { CustomI18nService } from &#x27;../i18n/i18n.service&#x27;;
 import { FollowersService } from &#x27;../followers/followers.service&#x27;;
-import { FollowersEntity } from &#x27;../followers/entities/followers.entity&#x27;;
+import { FollowerEntity } from &#x27;../followers/entities/followers.entity&#x27;;
 import { SetUserProfileDto } from &#x27;./dtos/set-user-profile.dto&#x27;;
 import { UserProfileEntity } from &#x27;./entities/user-profile.entity&#x27;;
 import { SetUserSettingsDto } from &#x27;./dtos/set-user-settings.dto&#x27;;
@@ -1220,9 +1220,9 @@ export class UsersService {
    * Follow a partner
    * @param user
    * @param partnerId
-   * @returns Promise&lt;FollowersEntity&gt;
+   * @returns Promise&lt;FollowerEntity&gt;
    */
-  async followPartner(user: UserEntity, partnerId: string): Promise&lt;FollowersEntity&gt; {
+  async followPartner(user: UserEntity, partnerId: string): Promise&lt;FollowerEntity&gt; {
     const partnerFromDb &#x3D; await this.partnersService.findById(partnerId);
     if (!partnerFromDb) throw new Error(this.i18n.t(&#x27;partners.validations.not_found&#x27;));
     return await this.followService.follow(user, partnerFromDb);

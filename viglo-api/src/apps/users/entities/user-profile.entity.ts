@@ -11,7 +11,11 @@ export class UserProfileEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
   @OneToOne(() => UserEntity)
-  @JoinColumn({ name: 'user_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_profile_user_id' })
+  @JoinColumn({
+    name: 'user_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_profile_user_id',
+  })
   user: UserEntity;
 
   @Column()
@@ -49,12 +53,23 @@ export class UserProfileEntity extends SoftFieldsForEntities {
   gender: USER_GENDER_ENUM;
 
   @Column({
+    type: 'enum',
+    enum: USER_GENDER_ENUM,
+    nullable: true,
+  })
+  gender_other_description: string;
+
+  @Column({
     type: 'date',
     nullable: true,
   })
   birth_date: Date;
 
   @OneToOne(() => FileEntity, (file) => file.id, { nullable: true })
-  @JoinColumn({ name: 'avatar_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_profile_photo_id' })
+  @JoinColumn({
+    name: 'avatar_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_profile_photo_id',
+  })
   photo: File;
 }

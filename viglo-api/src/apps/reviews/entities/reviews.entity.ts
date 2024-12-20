@@ -8,17 +8,25 @@ import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
 })
 @Check(`"stars" BETWEEN 1 AND 5`)
 export class ReviewsEntity extends SoftFieldsForEntities {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.reviews, { onDelete: 'CASCADE' })
-  @JoinColumn({ name: 'user_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_reviews_user_id' })
+  @JoinColumn({
+    name: 'user_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_reviews_user_id',
+  })
   user: UserEntity;
 
   @ManyToOne(() => PartnerEntity, (partner) => partner.reviews, {
     onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'partner_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_partner_user_id' })
+  @JoinColumn({
+    name: 'partner_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_partner_user_id',
+  })
   partner: PartnerEntity;
 
   @Column({ type: 'int', width: 1 })

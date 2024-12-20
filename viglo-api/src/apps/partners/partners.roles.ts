@@ -1,0 +1,3 @@
+export enum PARTNER_ROLES {
+  PARTNER_OWNER = 'PARTNER_OWNER',
+}

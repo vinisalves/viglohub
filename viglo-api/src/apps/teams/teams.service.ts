@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { TeamsEntity } from './entities/teams.entity';
+import { TeamEntity } from './entities/teams.entity';
 import { Repository } from 'typeorm';
 import { CustomI18nService } from '../i18n/i18n.service';
 import { CreateTeamDto } from './dtos/create-team.dto';
@@ -15,8 +15,8 @@ import { PartnerEntity } from '../partners/entities/partner.entity';
 @Injectable()
 export class TeamsService {
   constructor(
-    @InjectRepository(TeamsEntity)
-    private readonly teamsRepository: Repository<TeamsEntity>,
+    @InjectRepository(TeamEntity)
+    private readonly teamsRepository: Repository<TeamEntity>,
     @InjectRepository(TeamMemberEntity)
     private readonly teamMemberRepository: Repository<TeamMemberEntity>,
 
@@ -43,7 +43,7 @@ export class TeamsService {
    * @param updateTeamsDto
    * @returns
    */
-  async update(currentUser: UserEntity, updateTeamsDto: UpdateTeamDto): Promise<TeamsEntity> {
+  async update(currentUser: UserEntity, updateTeamsDto: UpdateTeamDto): Promise<TeamEntity> {
     const updateResult = await this.teamsRepository.update(updateTeamsDto.team_id, {
       name: updateTeamsDto.name,
     });
@@ -58,7 +58,7 @@ export class TeamsService {
    * @param partner id
    * @returns
    */
-  async findAll(partnerId: string): Promise<TeamsEntity[]> {
+  async findAll(partnerId: string): Promise<TeamEntity[]> {
     return this.teamsRepository.find({
       where: {
         partner: {
@@ -72,7 +72,7 @@ export class TeamsService {
    * @param id
    * @returns
    */
-  async findById(id: string): Promise<TeamsEntity> {
+  async findById(id: string): Promise<TeamEntity> {
     return await this.teamsRepository.findOne({
       where: {
         partner: {

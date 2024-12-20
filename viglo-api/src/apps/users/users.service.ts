@@ -9,7 +9,7 @@ import { compareHash, generateHash } from '../../utils/encryption';
 import { PartnersService } from '../partners/partners.service';
 import { CustomI18nService } from '../i18n/i18n.service';
 import { FollowersService } from '../followers/followers.service';
-import { FollowersEntity } from '../followers/entities/followers.entity';
+import { FollowerEntity } from '../followers/entities/followers.entity';
 import { SetUserProfileDto } from './dtos/set-user-profile.dto';
 import { UserProfileEntity } from './entities/user-profile.entity';
 import { SetUserSettingsDto } from './dtos/set-user-settings.dto';
@@ -123,9 +123,9 @@ export class UsersService {
    * Follow a partner
    * @param user
    * @param partnerId
-   * @returns Promise<FollowersEntity>
+   * @returns Promise<FollowerEntity>
    */
-  async followPartner(user: UserEntity, partnerId: string): Promise<FollowersEntity> {
+  async followPartner(user: UserEntity, partnerId: string): Promise<FollowerEntity> {
     const partnerFromDb = await this.partnersService.findById(partnerId);
     if (!partnerFromDb) throw new Error(this.i18n.t('partners.validations.not_found'));
     return await this.followService.follow(user, partnerFromDb);
@@ -137,7 +137,10 @@ export class UsersService {
    * @param setProfileDto
    * @returns
    */
-  async setUserProfile(user: UserEntity, setProfileDto: SetUserProfileDto): Promise<UserProfileEntity> {
+  async setUserProfile(
+    user: UserEntity,
+    setProfileDto: SetUserProfileDto,
+  ): Promise<UserProfileEntity> {
     const gatewayPayload: UpdateCustomerDto = {
       name: setProfileDto.first_name + ' ' + setProfileDto.last_name,
       phone: setProfileDto.phone,
@@ -161,7 +164,10 @@ export class UsersService {
     });
 
     if (userHasProfile) {
-      const updateResult = await this.userProfileRepository.update(userHasProfile.id, setProfileDto);
+      const updateResult = await this.userProfileRepository.update(
+        userHasProfile.id,
+        setProfileDto,
+      );
       if (updateResult.affected > 0) {
         return await this.userProfileRepository.findOne({
           where: {
@@ -182,7 +188,10 @@ export class UsersService {
     return this.userProfileRepository.save(setProfileObj);
   }
 
-  async setUserSettings(user: UserEntity, setUserSettingsDto: SetUserSettingsDto): Promise<UserSettingsEntity> {
+  async setUserSettings(
+    user: UserEntity,
+    setUserSettingsDto: SetUserSettingsDto,
+  ): Promise<UserSettingsEntity> {
     const userHasSettings = await this.userSettingsRepository.findOne({
       where: {
         user: {
@@ -192,7 +201,10 @@ export class UsersService {
     });
 
     if (userHasSettings) {
-      const updateResult = await this.userSettingsRepository.update(userHasSettings.id, setUserSettingsDto);
+      const updateResult = await this.userSettingsRepository.update(
+        userHasSettings.id,
+        setUserSettingsDto,
+      );
 
       if (updateResult.affected > 0) {
         return await this.userSettingsRepository.findOne({

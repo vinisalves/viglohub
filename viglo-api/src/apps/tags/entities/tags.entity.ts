@@ -4,7 +4,7 @@ import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
 @Entity({
   name: 'tags',
 })
-export class TagsEntity extends SoftFieldsForEntities {
+export class TagEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

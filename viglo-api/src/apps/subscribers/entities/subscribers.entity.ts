@@ -6,19 +6,27 @@ import { UserEntity } from '../../users/entities/user.entity';
 @Entity({
   name: 'subscribers',
 })
-export class SubscribersEntity extends SoftFieldsForEntities {
+export class SubscriberEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.subscriptions, {
     onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'user_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_subscribers_user_id' })
+  @JoinColumn({
+    name: 'user_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_subscribers_user_id',
+  })
   user: UserEntity;
 
   @ManyToOne(() => PartnerEntity, (partner) => partner.subscribers, {
     onDelete: 'CASCADE',
   })
-  @JoinColumn({ name: 'partner_id', referencedColumnName: 'id', foreignKeyConstraintName: 'fk_subscribers_partner_id' })
+  @JoinColumn({
+    name: 'partner_id',
+    referencedColumnName: 'id',
+    foreignKeyConstraintName: 'fk_subscribers_partner_id',
+  })
   partner: PartnerEntity;
 }

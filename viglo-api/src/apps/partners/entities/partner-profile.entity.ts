@@ -62,7 +62,7 @@ export class PartnerProfileEntity {
     referencedColumnName: 'id',
     foreignKeyConstraintName: 'fk_profile_logo_id',
   })
-  logo: File;
+  logo: FileEntity;
 
   @OneToOne(() => FileEntity, (file) => file.id, { nullable: true })
   @JoinColumn({
@@ -70,5 +70,5 @@ export class PartnerProfileEntity {
     referencedColumnName: 'id',
     foreignKeyConstraintName: 'fk_profile_banner_id',
   })
-  banner: File;
+  banner: FileEntity;
 }

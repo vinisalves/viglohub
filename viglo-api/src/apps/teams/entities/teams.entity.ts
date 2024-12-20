@@ -14,7 +14,7 @@ import { TeamMemberEntity } from './team-member.entity';
 @Entity({
   name: 'teams',
 })
-export class TeamsEntity extends SoftFieldsForEntities {
+export class TeamEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 

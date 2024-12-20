@@ -1,6 +1,6 @@
 import { forwardRef, Inject, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { FollowersEntity } from './entities/followers.entity';
+import { FollowerEntity } from './entities/followers.entity';
 import { Repository, UpdateResult } from 'typeorm';
 import { FollowPartnerDto } from './dtos/follow-partner.dto';
 import { UnfollowPartnerDto } from './dtos/unfollow-partner.dto';
@@ -13,13 +13,13 @@ import { CustomI18nService } from '../i18n/i18n.service';
 @Injectable()
 export class FollowersService {
   constructor(
-    @InjectRepository(FollowersEntity)
-    private readonly followersRepository: Repository<FollowersEntity>,
+    @InjectRepository(FollowerEntity)
+    private readonly followersRepository: Repository<FollowerEntity>,
 
     private readonly i18n: CustomI18nService,
   ) {}
 
-  async getUserFollows(user: UserEntity): Promise<FollowersEntity[]> {
+  async getUserFollows(user: UserEntity): Promise<FollowerEntity[]> {
     if (!user) throw new Error(this.i18n.t('users.validations.not_found'));
 
     return this.followersRepository.find({
@@ -36,9 +36,8 @@ export class FollowersService {
     });
   }
 
-  async getPartnerFollows(partner: PartnerEntity): Promise<FollowersEntity[]> {
-    if (!partner)
-      throw new Error(this.i18n.t('partners.validations.not_found'));
+  async getPartnerFollows(partner: PartnerEntity): Promise<FollowerEntity[]> {
+    if (!partner) throw new Error(this.i18n.t('partners.validations.not_found'));
     return this.followersRepository.find({
       where: { partner: partner },
       relations: ['user'],
@@ -46,19 +45,14 @@ export class FollowersService {
   }
 
   async countUserFollowers(partner: PartnerEntity): Promise<Number> {
-    if (!partner)
-      throw new Error(this.i18n.t('partners..validations.not_found'));
+    if (!partner) throw new Error(this.i18n.t('partners..validations.not_found'));
     return this.followersRepository.count({
       where: { partner: partner },
     });
   }
 
-  async follow(
-    user: UserEntity,
-    partner: PartnerEntity,
-  ): Promise<FollowersEntity> {
-    if (!partner)
-      throw new Error(this.i18n.t('partners.validations.not_found'));
+  async follow(user: UserEntity, partner: PartnerEntity): Promise<FollowerEntity> {
+    if (!partner) throw new Error(this.i18n.t('partners.validations.not_found'));
 
     const newFollower = this.followersRepository.create({
       user: user,
@@ -67,12 +61,8 @@ export class FollowersService {
     return await this.followersRepository.save(newFollower);
   }
 
-  async unFollow(
-    user: UserEntity,
-    partner: PartnerEntity,
-  ): Promise<UpdateResult> {
-    if (!partner)
-      throw new Error(this.i18n.t('partners.validations.not_found'));
+  async unFollow(user: UserEntity, partner: PartnerEntity): Promise<UpdateResult> {
+    if (!partner) throw new Error(this.i18n.t('partners.validations.not_found'));
 
     if (!user) throw new Error(this.i18n.t('users.validations.not_found'));
 

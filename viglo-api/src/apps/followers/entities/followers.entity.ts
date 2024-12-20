@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, ManyToOne, CreateDateColumn, JoinColumn, Unique } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  ManyToOne,
+  CreateDateColumn,
+  JoinColumn,
+  Unique,
+} from 'typeorm';
 import { UserEntity } from '../../users/entities/user.entity';
 import { PartnerEntity } from '../../partners/entities/partner.entity';
 import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
@@ -7,9 +14,9 @@ import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
   name: 'followers',
 })
 @Unique('unique_follow', ['user', 'partner'])
-export class FollowersEntity extends SoftFieldsForEntities {
+export class FollowerEntity extends SoftFieldsForEntities {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @ManyToOne(() => UserEntity, (user) => user.follows, { onDelete: 'CASCADE' })
   @JoinColumn({

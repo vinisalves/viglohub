@@ -15,12 +15,12 @@ import { generateHash, compareHash } from '../../../utils/encryption';
 import { SoftFieldsForEntities } from '../../../utils/soft-fields-for-entities';
 import { UserProfileEntity } from './user-profile.entity';
 import { UserSettingsEntity } from './user-settings.entity';
-import { SubscribersEntity } from '../../subscribers/entities/subscribers.entity';
-import { FollowersEntity } from '../../followers/entities/followers.entity';
+import { SubscriberEntity } from '../../subscribers/entities/subscribers.entity';
+import { FollowerEntity } from '../../followers/entities/followers.entity';
 import { ReviewsEntity } from '../../reviews/entities/reviews.entity';
-import { TagsEntity } from '../../tags/entities/tags.entity';
+import { TagEntity } from '../../tags/entities/tags.entity';
 import { PartnerEntity } from '../../partners/entities/partner.entity';
-import { TeamsEntity } from '../../teams/entities/teams.entity';
+import { TeamEntity } from '../../teams/entities/teams.entity';
 
 @Entity({
   name: 'users',
@@ -52,6 +52,14 @@ export class UserEntity extends SoftFieldsForEntities {
   @Column({ nullable: true })
   user_gateway_id: string;
 
+  @Exclude()
+  @Column({ nullable: true })
+  confirmation_code: number;
+
+  @Exclude()
+  @Column({ nullable: true })
+  is_confirmed: boolean;
+
   @OneToOne(() => UserProfileEntity, { cascade: true })
   @JoinColumn({
     name: 'profile_id',
@@ -68,16 +76,16 @@ export class UserEntity extends SoftFieldsForEntities {
   })
   settings: UserSettingsEntity;
 
-  @OneToMany(() => SubscribersEntity, (subscriptions) => subscriptions.user)
-  subscriptions: SubscribersEntity[];
+  @OneToMany(() => SubscriberEntity, (subscriptions) => subscriptions.user)
+  subscriptions: SubscriberEntity[];
 
-  @OneToMany(() => FollowersEntity, (follows) => follows.user)
-  follows: FollowersEntity[];
+  @OneToMany(() => FollowerEntity, (follows) => follows.user)
+  follows: FollowerEntity[];
 
   @OneToMany(() => ReviewsEntity, (reviews) => reviews.user)
   reviews: ReviewsEntity[];
 
-  @ManyToMany(() => TagsEntity)
+  @ManyToMany(() => TagEntity)
   @JoinTable({
     name: 'users_tags',
     joinColumn: {
@@ -89,13 +97,13 @@ export class UserEntity extends SoftFieldsForEntities {
       referencedColumnName: 'id',
     },
   })
-  tags: TagsEntity;
+  tags: TagEntity;
 
   @ManyToMany(() => PartnerEntity, (partner) => partner.owners)
   partners: PartnerEntity[];
 
-  @ManyToMany(() => TeamsEntity, (teams) => teams.members)
-  teams: TeamsEntity[];
+  @ManyToMany(() => TeamEntity, (teams) => teams.members)
+  teams: TeamEntity[];
 
   @BeforeInsert()
   encryptPass() {
